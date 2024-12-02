@@ -1,4 +1,6 @@
-TEK465B
+/*  
+    ---- PROGRAM 3 CALL_SIGN RUNNING on ESP32 JCI, NOV.29, 2024 ----
+
 For those interested in programming an ESP32 using the Arduino IDE, 
 here is the C++ program managing the three rotating (Ham radio) call signs (W2AEW.DL8YQ and mine ON4KCF)
 
@@ -16,13 +18,10 @@ You may notice that each polyline used in call signs ends with the value 255. Th
 The oscilloscope screen is represented as a matrix of XY points measuring 254x254 (with 255, of course, being excluded).
 The origin (0,0) is located at the bottom-left corner of the screen.
 The two 12-bit DACs of the ESP32 each deliver a maximum voltage of 3.3V.
----------------------------------------
+*/ 
 
-// PROGRAM 3 CALL_SIGN RUNNING on ESP32 JCI, NOV.29, 2024
-//-------------------------------------
 #include <math.h>
 #include "driver/dac.h"
-
 #define FIGURE_DELAY 1  // Delay in microseconds
 
 // Données pour les images
@@ -50,7 +49,6 @@ const uint8_t logo2[] PROGMEM = { /* DL8YQ */
 123,198,127,198,124,194,122,192,121,187,132,188,133,194,128,192,133,199,134,204,124,203,255,
 135,190,134,188,133,186,133,184,137,183,139,192,135,192,255,
 
-  
   };
 const uint8_t logo3[] PROGMEM = { /* ON4KCF */ 
 53,130,55,139,55,148,54,156,52,166,48,172,43,175,38,174,34,171,29,166,26,161,23,156,21,150,17,140,15,130,14,120,13,108,15,98,17,91,20,87,25,85,28,85,35,89,41,97,46,107,50,117,255,
